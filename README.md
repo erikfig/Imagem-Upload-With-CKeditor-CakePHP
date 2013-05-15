@@ -1,7 +1,11 @@
-Imagem-Upload-With-CKeditor-CakePHP
+Administração de imagens com upload multiplo e integração com CKeditor
 ===================================
 
-Sistema de upload com integração direta no form ou via ckeditor
+Você envia sua imagem (ou suas imagens) e apenas clica em cima para adicionar o nome (url) dela no campo do formulário, em uma janela a parte para você não perder seus dados.
+
+Integrado ao CKeditor!
+
+O sistema já redimensiona para 5 formatos diferentes de imagens para você usar.
 
 INSTALAÇÃO
 ===================================
