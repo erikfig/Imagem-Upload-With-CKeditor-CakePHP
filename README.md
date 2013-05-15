@@ -10,9 +10,9 @@ O sistema já redimensiona para 5 formatos diferentes de imagens para você usar
 INSTALAÇÃO
 ===================================
 
-Clone ou desconpacte no diretório plugin do seu CakePHP
+Clone ou desconpacte no diretório app/Plugin do seu CakePHP e renomeio a pasta parra Imgadmin
 
-em app/Config/boostrap.php adicione:
+Em app/Config/boostrap.php adicione:
 
 CakePlugin::load('Imgadmin',array('routes'=>true));
 
@@ -20,7 +20,7 @@ ou
 
 CakePlugin::loadAll(array('Imgadmin' => array('routes' => true)));
 
-No seu form, ou layout, ou tema... bem, na sua view adicione os javascripts:
+No seu form, ou layout, ou tema... bem, na sua view, adicione os javascripts:
 
 echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js','imgadmin/admin.js','/imgadmin/js/ckeditor/ckeditor.js'));
 
