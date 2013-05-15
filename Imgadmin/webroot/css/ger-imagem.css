@@ -1,0 +1,25 @@
+.plupload_scroll .plupload_filelist {
+	height: 185px;
+	background: #EEE;
+	overflow-y: scroll;
+}
+
+.plupload_filelist_header {
+	font-weight:bold;
+	border-top:none;
+	border-bottom: 1px solid #CDCDCD;
+}
+
+.plupload_filelist_header, .plupload_filelist_footer {
+	background: #FFF;
+	padding: 8px 8px;
+	color: #42454A;
+}
+
+.pl_add {
+	margin-right: 5px;
+}
+
+.plupload_filelist_footer {
+	border-bottom: 1px solid #CDCDCD;
+}
