@@ -1,9 +1,9 @@
 <?php 
 	 /*** CSS DO TEMA ***/
-	 echo $this->Html->css(array('/Imgadmin/css/bootstrap.min','/Imgadmin/css/bootstrap-responsive.min','/Imgadmin/js/plupload/jquery.plupload.queue/css/jquery.plupload.queue','/Imgadmin/css/ger-imagem'),null,array('inline'=>false));
+	 echo $this->Html->css(array('/imgadmin/css/bootstrap.min','/imgadmin/css/bootstrap-responsive.min','/imgadmin/js/plupload/jquery.plupload.queue/css/jquery.plupload.queue','/imgadmin/css/ger-imagem'),null,array('inline'=>false));
 	 
 	 /*** JS DO TEMA ***/
-	 echo $this->Html->script(array('http://bp.yahooapis.com/2.4.21/browserplus-min.js','/Imgadmin/js/tmp/jquery.min.js','/Imgadmin/js/plupload/plupload.full','/Imgadmin/js/plupload/jquery.plupload.queue/jquery.plupload.queue','/Imgadmin/js/bootstrap.min'),array('inline'=>false));
+	 echo $this->Html->script(array('http://bp.yahooapis.com/2.4.21/browserplus-min.js','//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js','/imgadmin/js/plupload/plupload.full','/imgadmin/js/plupload/jquery.plupload.queue/jquery.plupload.queue','/imgadmin/js/bootstrap.min'),array('inline'=>false));
 	 
 ?>
 <!DOCTYPE html>
@@ -100,10 +100,10 @@
 		],
 
 		// Flash settings
-		flash_swf_url : '<?php echo $this->Html->url('/Imgadmin/js');?>/plupload/plupload.flash.swf',
+		flash_swf_url : '<?php echo $this->Html->url('/imgadmin/js');?>/plupload/plupload.flash.swf',
 
 		// Silverlight settings
-		silverlight_xap_url : '<?php echo $this->Html->url('/Imgadmin/js');?>/plupload/plupload.silverlight.xap',
+		silverlight_xap_url : '<?php echo $this->Html->url('/imgadmin/js');?>/plupload/plupload.silverlight.xap',
 		
 		preinit : {
             Init: function(up, info) {

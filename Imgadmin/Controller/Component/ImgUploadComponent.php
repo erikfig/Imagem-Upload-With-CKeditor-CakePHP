@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Google Analytics Component fo CakePHP 2
+ * Image Upload
  *
  * By Erik Alves de Figueiredo (erik.figueiredo@gmail.com)
  *
@@ -29,7 +29,7 @@ class ImgUploadComponent extends Component {
 	
 	// DEFINE SE A PASTA A SER USADA DENTRO DE WEBROOT/IMG
 	// ATENÇÃO: A FUNÇÃO JÁ ADICIONA A ULTIMA BARRA '/' NO FIM DO CAMINHO, NÃO É NECESSÁRIO ADICIONAR ISSO EM LUGAR NENHUM
-	public $destino='myImg';
+	public $destino='upload';
 	
 	public $_defaults = array(
 		'path' => null
@@ -40,7 +40,7 @@ class ImgUploadComponent extends Component {
 		$settings = array_merge($this->_defaults, $settings);
 		$settings['path'] =  ($settings['path']==null)?WWW_ROOT.'img'.DS.$this->destino.DS:$settings['path'];
     	$this->settings = $settings;
-		$this->criaPasta('upload');
+		$this->criaPasta($settings['path']);
 	}
 	
 	//Cria as pastas caso não existam
@@ -55,7 +55,6 @@ class ImgUploadComponent extends Component {
 				$folder->create($pasta.'medio');
 				$folder->create($pasta.'grande');
 				$folder->create($pasta.'full');
-				$folder->create($pasta.'slider');
 				$folder->chmod($pasta, 0755, true);
 			else:
 				throw new NotFoundException(
@@ -311,44 +310,31 @@ class ImgUploadComponent extends Component {
 	 */
 	function redimensionaCMS($file){
 		
+		$config = Configure::read('Imgadmin');
+		
 		// imagem 50x50px
 		$file['novoDiretorio']= $file['diretorio'].'thumb'.DS;
-		$this->redimensiona($file,50,50,'crop');
+		$this->redimensiona($file,$config['thumb']['largura'],$config['thumb']['altura'],$config['thumb']['redimensiona']);
 		
 		// imagem 100x100px
 		$file['novoDiretorio']= $file['diretorio'].'pequeno'.DS;
-		$this->redimensiona($file,100,100,'crop');
+		$this->redimensiona($file,$config['pequeno']['largura'],$config['pequeno']['altura'],$config['pequeno']['redimensiona']);
 		
 		// imagem 250x250px
 		$file['novoDiretorio']= $file['diretorio'].'medio'.DS;
-		$this->redimensiona($file,250,250,'crop');
+		$this->redimensiona($file,$config['medio']['largura'],$config['medio']['altura'],$config['medio']['redimensiona']);
 		
 		// imagem 500x500px
 		$file['novoDiretorio']= $file['diretorio'].'grande'.DS;
-		$this->redimensiona($file,500,500,'crop');
+		$this->redimensiona($file,$config['grande']['largura'],$config['grande']['altura'],$config['grande']['redimensiona']);
 		
 		// imagem 800x600px
 		$file['novoDiretorio']= $file['diretorio'].'full'.DS;
-		$this->redimensiona($file,800,600,'outside');
-		
-		// imagem 800x600px
-		$file['novoDiretorio']= $file['diretorio'].'slider'.DS;
-		$this->redimensiona($file,800,600,'outside');
+		$this->redimensiona($file,$config['full']['largura'],$config['full']['altura'],$config['full']['redimensiona']);
 		
 	}
 	
-	/*
-	 * Redimensiona imagem para o slider
-	 */
-	function redimensionaSlider($file,$largura,$altura,$pasta=null){
-		
-		if($pasta!=null) $this->settings['path'] = $pasta;
-		
-		// imagem 50x50px
-		$file['novoDiretorio']= $file['diretorio'].'slider'.DS;
-		$this->redimensiona($file,$largura,$altura,'crop');
-				
-	}
+	
 	/* Apaga as imagens do CMS
 	 * 
 	 */
@@ -373,23 +359,8 @@ class ImgUploadComponent extends Component {
 		
 		// imagem 800x600
 		$this->removeImage('full'.DS.$imagem);
-		
-		// imagem 800x600
-		$this->removeImage('slider'.DS.$imagem);
-		
-		return true;
-	}
-	
-	
-	/* Apaga as imagens do slider
-	 * 
-	 */
-	function removeImageSlider($imagem,$pasta=null){
-		if($pasta!=null) $this->settings['path']=$pasta;
-		// imagem slider
-		$this->removeImage('slider'.DS.$imagem);
 				
 		return true;
 	}
-	
+		
 }
