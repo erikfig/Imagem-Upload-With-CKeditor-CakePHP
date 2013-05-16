@@ -3,7 +3,7 @@
 	 echo $this->Html->css(array('/imgadmin/css/bootstrap.min','/imgadmin/css/bootstrap-responsive.min','/imgadmin/js/plupload/jquery.plupload.queue/css/jquery.plupload.queue','/imgadmin/css/ger-imagem'),null,array('inline'=>false));
 	 
 	 /*** JS DO TEMA ***/
-	 echo $this->Html->script(array('http://bp.yahooapis.com/2.4.21/browserplus-min.js','//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js','/imgadmin/js/plupload/plupload.full','/imgadmin/js/plupload/jquery.plupload.queue/jquery.plupload.queue','/imgadmin/js/bootstrap.min'),array('inline'=>false));
+	 echo $this->Html->script(array('http://bp.yahooapis.com/2.4.21/browserplus-min.js','/imgadmin/js/jquery','/imgadmin/js/plupload/plupload.full','/imgadmin/js/plupload/jquery.plupload.queue/jquery.plupload.queue','/imgadmin/js/bootstrap.min'),array('inline'=>false));
 	 
 ?>
 <!DOCTYPE html>
