@@ -24,6 +24,8 @@ No seu form, ou layout, ou tema... bem, na sua view, adicione os javascripts:
 
 echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js','imgadmin/admin.js','/imgadmin/js/ckeditor/ckeditor.js'));
 
+Altera a permissão da pasta app/webroot/img para leitura e gravação (777).
+
 Pronto, está tudo configurado
 
 Usando
