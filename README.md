@@ -7,8 +7,8 @@ Integrado ao CKeditor!
 
 O sistema já redimensiona para 5 formatos diferentes de imagens para você usar.
 
-INSTALAÇÃO
-===================================
+Instalação
+------------
 
 Clone ou desconpacte no diretório app/Plugin do seu CakePHP e renomeio a pasta parra Imgadmin
 
@@ -35,7 +35,7 @@ Altera a permissão da pasta app/webroot/img para leitura e gravação (777).
 Pronto, está tudo configurado
 
 Usando
-===================================
+------------
 
 Para usar é fácil, apenas coloque um field hidden com class img-select, ex:
 
@@ -52,7 +52,7 @@ E para usar o ckeditor adicione a class ckeditor em um textarea
 O CKeditor funciona normalmente, ou seja, com todas as funções e configurações que você precisar...
 
 Configuração opcional
-===================================
+------------
 
 Você ainda pode opcionalmente configurar o Plugin para ajustar suas imagem ao seu gosto adicionando esse código ao seu app/Config/core.php:
 
