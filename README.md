@@ -14,15 +14,21 @@ Clone ou desconpacte no diretório app/Plugin do seu CakePHP e renomeio a pasta 
 
 Em app/Config/boostrap.php adicione:
 
+/*
 CakePlugin::load('Imgadmin',array('routes'=>true));
+*/
 
 ou
 
+/*
 CakePlugin::loadAll(array('Imgadmin' => array('routes' => true)));
+*/
 
 No seu form, ou layout, ou tema... bem, na sua view, adicione os javascripts:
 
+/*
 echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js','imgadmin/admin.js','/imgadmin/js/ckeditor/ckeditor.js'));
+*/
 
 Altera a permissão da pasta app/webroot/img para leitura e gravação (777).
 
@@ -33,11 +39,15 @@ Usando
 
 Para usar é fácil, apenas coloque um field hidden com class img-select, ex:
 
+/*
 echo $this->Form->hidden('minhaimagem',array('class'=>'img-select'));
+*/
 
 E para usar o ckeditor adicione a class ckeditor em um textarea
 
+/*
 echo $this->Form->textarea('texto',array('class'=>'ckeditor'));
+*/
 
 O CKeditor funciona normalmente, ou seja, com todas as funções e configurações que você precisar...
 
@@ -46,6 +56,7 @@ Configuração opcional
 
 Você ainda pode opcionalmente configurar o Plugin para ajustar suas imagem ao seu gosto adicionando esse código ao seu app/Config/core.php:
 
+/*
 Configure::write('Imgadmin', array(
   'full'=>array(
 		'largura'=>800,
@@ -73,6 +84,7 @@ Configure::write('Imgadmin', array(
 		'redimensiona'=>'crop'
 	)
 ));
+*/
 
 Sendo que os valores para redimensiona são:
 
